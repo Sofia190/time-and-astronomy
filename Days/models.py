@@ -158,6 +158,7 @@ class Day(models.Model):
 	second_date_with_total_lunar_eclipse = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
 	months_between_dates_with_total_lunar_eclipse = models.IntegerField(default=0)
 	minutes_between_dates_with_total_lunar_eclipse = models.IntegerField(default=0)
+	
 
 	inTimeDelta_hours = models.IntegerField(default=0)
 	inTZObject_name = models.CharField(max_length=70, default='EDT')
