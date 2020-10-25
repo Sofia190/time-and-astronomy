@@ -12,8 +12,6 @@ from django.db.models import Q
 
 
 
-
-
 class Name(models.Model):
 
 
@@ -79,8 +77,6 @@ class DayQuerySet(models.query.QuerySet):
 		return self.filter(lookup)
 				
 
-
-		
 		
 class DayModelManager(models.Manager):
 
