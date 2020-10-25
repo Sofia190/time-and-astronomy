@@ -12,8 +12,6 @@ from Days.models import DaysInSearchEngine
 
 
 
-
-
 def search_view(request):
 	query = request.GET.get('q', None)
 	user = None 
@@ -22,7 +20,7 @@ def search_view(request):
 	context = {'query' : query}
 	if query is not None:
 		SearchQuery.objects.create(user=user, query=query)
-		daysinsearchengine = DaysInSearchEngine.objects.search(query=query)    #.all().search()
+		daysinsearchengine = DaysInSearchEngine.objects.search(query=query)   
 		context['daysinsearchengine'] = daysinsearchengine
 	return render(request, 'Searches/view.html', context)
 
