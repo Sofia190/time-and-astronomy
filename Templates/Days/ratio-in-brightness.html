@@ -1,0 +1,24 @@
+
+
+
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+
+
+
+<h6>The ratio in brightness between two stars will be calculated</h6>
+
+   
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+Result:
+
+<p>{{obj.ratio_in_brightness_res}}<p>
+
+
