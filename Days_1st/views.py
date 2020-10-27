@@ -5690,7 +5690,7 @@ def  delete_the_DaysInSearchEngine_using_ids(request):
 
 
 
-
+# the first phase of the pattern for year 2021
 
 def set_total_lunar_eclipses(request):
 
