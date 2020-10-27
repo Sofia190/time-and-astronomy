@@ -17,6 +17,7 @@ class DaysTillaDateForm(ModelForm):
 
 		fields = ['first_date', 'second_date']
 
+		
 
 
 class YearsWithAttributesEqualToaValueForm(ModelForm):
@@ -105,7 +106,6 @@ class MonthsandDaystillthenextAutumnEquinoxForm(ModelForm):
 
 
 
-
 class PeriodsbetweenDateswithTotalLunarEclipseForm(ModelForm):
 
 
@@ -142,6 +142,7 @@ class Find_the_difference_of_timezone_with_USA_Form(ModelForm):
 
 		fields = ['inTimeDelta_hours_diff', "inTZObject_name_diff", "datetime_instance_var_diff",]
 
+		
 
 
 
@@ -174,9 +175,7 @@ class Find_difference_with_timezone_Form(ModelForm):
 
 
 
-
-
-
+		
 
 class Find_difference_of_timezone_from_UTC_Form(ModelForm):
 
@@ -201,6 +200,7 @@ class find_difference_between_two_timezones_Form(ModelForm):
 
 	
 	
+	
 class display_date_for_the_next_n_days_Form(ModelForm):
 
 	class Meta:
@@ -210,6 +210,7 @@ class display_date_for_the_next_n_days_Form(ModelForm):
 		fields = ['n_days', "year_for_date_n_days", "month_for_date_n_days" ]
 
 
+		
 		
 
 class attributes_of_time_equal_to_date_in_a_decade_Form(ModelForm):
@@ -294,7 +295,6 @@ class years_of_nth_century_have_more_than_n_days_with_attrs_Form(ModelForm):
 
 
 
-
 	
 class  solstices_in_n_years_with_sum_attrs_even_number_Form(ModelForm):
 
@@ -322,7 +322,6 @@ class  solstices_in_n_years_with_sum_attrs_odd_number_Form(ModelForm):
 
 
 
-	
 class view_calendar_Form(ModelForm):
 
 	class Meta:
@@ -334,6 +333,7 @@ class view_calendar_Form(ModelForm):
 
 
 
+		
 class create_Days_Form(ModelForm):
 
 	class Meta:
@@ -344,6 +344,9 @@ class create_Days_Form(ModelForm):
 
 
 
+		
+		
+		
 class create_Days_712_Form(ModelForm):
 
 	class Meta:
@@ -365,6 +368,7 @@ class delete_Days_Form(ModelForm):
 
 
 
+		
 
 class determine_visibility_Form(ModelForm):
 
@@ -456,6 +460,8 @@ class set_summer_solstice_Form(ModelForm):
 		fields = ['first_id_set_summer_solstice', 'second_id_set_summer_solstice']
 
 
+		
+		
 
 
 class set_winter_solstice_Form(ModelForm):
@@ -538,6 +544,8 @@ class ratio_in_brightness_between_two_stars_Form(ModelForm):
 		fields = ['first_aparent_magnitude_ratio_brightness', 
 		'second_aparent_magnitude_ratio_brightness']
 
+		
+		
 
 
 class light_years_in_parsecs_Form(ModelForm):
@@ -644,24 +652,9 @@ class display_stars_most_visible_in_solstice_dates_Form(ModelForm):
 		fields = ['count']
 
 
-
-
-class set_total_lunar_eclipses_Form(ModelForm):
-
-	class Meta:
-
-		model = DaysInSearchEngine
-
-		fields = ['first_id_set_total_lunar_eclipses', 'second_id_set_total_lunar_eclipses']
-
-
-
-
-
-
-
-
-
+		
+		
+		
 
 class delete_the_DaysInSearchEngine_using_ids_Form(ModelForm):
 
@@ -670,6 +663,21 @@ class delete_the_DaysInSearchEngine_using_ids_Form(ModelForm):
 		model = DaysInSearchEngine
 
 		fields = ['id_one_objs_to_delete', 'id_two_objs_to_delete']
+
+
+		
+		
+
+class set_total_lunar_eclipses_Form(ModelForm):
+
+	class Meta:
+
+		model = DaysInSearchEngine
+
+		fields = ['first_id_set_total_lunar_eclipses', 'second_id_set_total_lunar_eclipses']
+		
+
+
 
 
 
