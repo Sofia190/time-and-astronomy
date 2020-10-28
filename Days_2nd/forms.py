@@ -659,10 +659,6 @@ class set_total_lunar_eclipses_Form(ModelForm):
 
 
 
-
-
-
-
 class delete_the_DaysInSearchEngine_using_ids_Form(ModelForm):
 
 	class Meta:
@@ -682,8 +678,6 @@ class lunar_eclipses_stars_most_visible_Form(ModelForm):
 		model = DaysInSearchEngine
 
 		fields = ['first_date_period_total_lunar_eclipse', 'second_date_period_total_lunar_eclipse']
-
-
 
 
 
