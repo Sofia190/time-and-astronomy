@@ -79,10 +79,6 @@ class DaysInSearchEngineModelManager(models.Manager):
 
 
 
-
-
-
-
 class DayQuerySet(models.query.QuerySet):
 
 	def search(self, query):
@@ -92,9 +88,6 @@ class DayQuerySet(models.query.QuerySet):
 
 		return self.filter(lookup)
 				
-
-
-
 
 
 class DayModelManager(models.Manager):
@@ -123,17 +116,16 @@ class Day(models.Model):
 	one_date_res = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now)
 	two_date_res = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now)
 
-
 	days_till_a_date_result = models.IntegerField(default=0)
 
-
+	
 
 	date_for_years_with_attributes_equal_to_a_value = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
 	date_for_years_with_attributes_equal_to_a_value_result = models.IntegerField(default=0)
 	value_for_attributes = models.IntegerField(default=0)
 	attributes_sum = models.IntegerField(default=0)
 
-
+	
 	first_year_of_decade = models.IntegerField(default=0)
 	second_year_of_decade = models.IntegerField(default=0)
 	bisect_years = models.TextField(default=0)
@@ -168,7 +160,6 @@ class Day(models.Model):
 	days_until_next_spring_equinox = models.IntegerField(default=0)
 
 
-
 	first_date_next_autumn_equinox = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
 	second_date_next_autumn_equinox = models.DateField(auto_now=False, auto_now_add=False, default=date(2021,9,22))
 	months_until_next_autumn_equinox = models.IntegerField(default=0)
@@ -179,6 +170,7 @@ class Day(models.Model):
 	second_date_with_total_lunar_eclipse = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
 	months_between_dates_with_total_lunar_eclipse = models.IntegerField(default=0)
 	minutes_between_dates_with_total_lunar_eclipse = models.IntegerField(default=0)
+	
 
 	inTimeDelta_hours = models.IntegerField(default=0)
 	inTZObject_name = models.CharField(max_length=70, default='EDT')
@@ -235,7 +227,6 @@ class Day(models.Model):
 
 	day_sum_attributes = models.IntegerField(default=0)
 
-
 	hour_sum_attributes = models.IntegerField(default=0)
 
 	minute_sum_attributes = models.IntegerField(default=0)
@@ -243,9 +234,7 @@ class Day(models.Model):
 	second_sum_attributes = models.IntegerField(default=0)
 
 
-
 	dates_sum_attributes_result = models.TextField(default=0)
-
 
 
 
@@ -259,13 +248,11 @@ class Day(models.Model):
 
 	day_sum_attributes_in_a_century = models.IntegerField(default=0)
 
-	
 	hour_sum_attributes_in_a_century = models.IntegerField(default=0)
 
 	minute_sum_attributes_in_a_century = models.IntegerField(default=0)
 
 	second_sum_attributes_in_a_century = models.IntegerField(default=0)
-
 
 
 	dates_sum_attributes_in_a_century_result = models.TextField(default=0)
@@ -280,10 +267,10 @@ class Day(models.Model):
 	first_date_time_until = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now)
 	second_date_time_until = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now)
 
-
 	days_until_result = models.IntegerField(default=0)
 
 	time_until_result = models.TextField(default=0)
+	
 
 
 	next_solstice = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime(2021, 12, 21, 10, 0, 0))
@@ -310,7 +297,6 @@ class Day(models.Model):
 	first_year_of_nth_century_attributes = models.IntegerField(default=0)
 
 	second_year_of_nth_century_attributes = models.IntegerField(default=0)
-
 
 	n_days_attributes = models.IntegerField(default=0)
 
@@ -365,10 +351,8 @@ class Day(models.Model):
 	date_one_calendar = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
 	date_two_calendar = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
 
-
 	month_one_date_one_calendar = models.IntegerField(default=0)
 	month_two_date_two_calendar = models.IntegerField(default=0)
-
 
 	day_one_date_two_calendar = models.IntegerField(default=0)
 	day_two_date_two_calendar = models.IntegerField(default=0)
@@ -526,7 +510,6 @@ class DaysInSearchEngine(models.Model):
 
 
 		
-
 
 
 
@@ -710,3 +693,8 @@ class Stars(models.Model):
 
 
 
+
+	
+	
+	
+	
