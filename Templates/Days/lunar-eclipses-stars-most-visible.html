@@ -1,0 +1,43 @@
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+
+
+
+<h6>Stars most visible in lunar eclipses in the interval will be found</h6>
+
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+<br>
+
+{% if obj.list_stars_most_visible_lunar_eclipses|length < 7 %}
+
+In this interval there were not recorded total lunar eclipses
+
+{% else %}
+
+The stars most visible in this interval: {{obj.list_stars_most_visible_lunar_eclipses }}
+
+{% endif  %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
