@@ -513,6 +513,7 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 
 
 
+
 def view_how_many_bisect_years_in_the_last_nth_centuries(request):
 
 
@@ -641,6 +642,7 @@ def how_many_months_and_days_till_the_next_spring_equinox(request):
     
 
 
+	
 
 def how_many_months_and_days_till_the_next_autumn_equinox(request):
 
@@ -1408,7 +1410,6 @@ def display_date_for_the_next_n_days(request):
 
 				dl_aux = []
 
-				#dt_obj = date(2020, 10, 25)
 				dt_obj = timezone.now()
 
 				obj.pivot_value = dt_obj.day
@@ -2692,7 +2693,7 @@ def  delete_the_DaysInSearchEngine(request):
 
 
 				if (i.year_one_period == obj.year_one_period or
-				i.year_two_period == obj.year_two_period):  #2101  2201
+				i.year_two_period == obj.year_two_period):  
 
 				    i.delete()
 
@@ -4348,6 +4349,7 @@ def determine_the_absolute_magnitude(request):
 
 
 
+
 def delete_objs_used_in_calculations(request):
 
 
@@ -4610,6 +4612,8 @@ def calculate_sum_of_attributes_of_nth_day(request):
 	template_path = "Days/calculate-sum-of-attributes-of-nth-day.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
+
+
 
 
 
@@ -5811,6 +5815,8 @@ def set_total_lunar_eclipses(request):
 
 	
 	return render(request, template_path, {'form': form})
+
+
 
 
 
