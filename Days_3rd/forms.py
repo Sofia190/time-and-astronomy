@@ -105,7 +105,6 @@ class MonthsandDaystillthenextAutumnEquinoxForm(ModelForm):
 
 
 
-
 class PeriodsbetweenDateswithTotalLunarEclipseForm(ModelForm):
 
 
@@ -127,7 +126,6 @@ class Find_the_equivalent_of_timezone_with_USA_Form(ModelForm):
 		model = Day
 
 		fields = ['inTimeDelta_hours', "inTZObject_name", "datetime_instance_var",]
-
 
 
 
@@ -173,9 +171,7 @@ class Find_difference_with_timezone_Form(ModelForm):
 		fields = ['inTimeDelta_hours_diff', "inTZObject_name_diff_filed", "datetime_instance_var_diff",]
 
 
-
-
-
+		
 
 
 class Find_difference_of_timezone_from_UTC_Form(ModelForm):
@@ -201,6 +197,7 @@ class find_difference_between_two_timezones_Form(ModelForm):
 
 	
 	
+	
 class display_date_for_the_next_n_days_Form(ModelForm):
 
 	class Meta:
@@ -210,6 +207,7 @@ class display_date_for_the_next_n_days_Form(ModelForm):
 		fields = ['n_days', "year_for_date_n_days", "month_for_date_n_days" ]
 
 
+		
 		
 
 class attributes_of_time_equal_to_date_in_a_decade_Form(ModelForm):
@@ -242,6 +240,7 @@ class attributes_of_time_equal_to_date_in_a_century_Form(ModelForm):
 
 
 
+		
 
 class find_time_until_a_date_after_n_years_Form(ModelForm):
 
@@ -253,6 +252,7 @@ class find_time_until_a_date_after_n_years_Form(ModelForm):
 
 
 
+		
 		
 class calculate_date_and_time_until_next_solstice_Form(ModelForm):
 
@@ -294,7 +294,6 @@ class years_of_nth_century_have_more_than_n_days_with_attrs_Form(ModelForm):
 
 
 
-
 	
 class  solstices_in_n_years_with_sum_attrs_even_number_Form(ModelForm):
 
@@ -321,7 +320,6 @@ class  solstices_in_n_years_with_sum_attrs_odd_number_Form(ModelForm):
 
 
 
-
 	
 class view_calendar_Form(ModelForm):
 
@@ -343,6 +341,7 @@ class create_Days_Form(ModelForm):
 		fields = ['year_one_period', 'year_two_period']
 
 
+		
 
 class create_Days_712_Form(ModelForm):
 
@@ -470,7 +469,6 @@ class set_winter_solstice_Form(ModelForm):
 
 
 
-
 class determine_stars_movement_Form(ModelForm):
 
 	class Meta:
@@ -494,6 +492,7 @@ class determine_the_aparent_magnitude_Form(ModelForm):
 
 
 
+		
 
 class determine_the_absolute_magnitude_Form(ModelForm):
 
@@ -539,6 +538,7 @@ class ratio_in_brightness_between_two_stars_Form(ModelForm):
 		'second_aparent_magnitude_ratio_brightness']
 
 
+		
 
 class light_years_in_parsecs_Form(ModelForm):
 
@@ -559,7 +559,6 @@ class calculate_the_annual_paralax_Form(ModelForm):
 		model = Stars
 
 		fields = ['distance_from_Earth_paralax']
-
 
 
 
@@ -611,6 +610,7 @@ class stars_visible_in_equinox_dates_Form(ModelForm):
 		fields = ['first_id_stars_equinoxes', 'second_id_stars_equinoxes']
 
 
+		
 
 
 class stars_visible_in_solstice_dates_Form(ModelForm):
@@ -623,6 +623,7 @@ class stars_visible_in_solstice_dates_Form(ModelForm):
 
 
 
+		
 
 class display_stars_most_visible_in_equinox_dates_Form(ModelForm):
 
@@ -634,6 +635,7 @@ class display_stars_most_visible_in_equinox_dates_Form(ModelForm):
 
 
 
+		
 
 class display_stars_most_visible_in_solstice_dates_Form(ModelForm):
 
@@ -655,12 +657,7 @@ class set_total_lunar_eclipses_Form(ModelForm):
 		fields = ['first_id_set_total_lunar_eclipses', 'second_id_set_total_lunar_eclipses']
 
 
-
-
-
-
-
-
+		
 
 
 class delete_the_DaysInSearchEngine_using_ids_Form(ModelForm):
@@ -687,9 +684,6 @@ class lunar_eclipses_stars_most_visible_Form(ModelForm):
 
 
 
-
-
-
 class determine_the_relative_position_of_stars_Form(ModelForm):
 
 	class Meta:
@@ -706,9 +700,4 @@ class determine_the_relative_position_of_stars_Form(ModelForm):
 
 
 
-
-
-
-
-
-
+		
