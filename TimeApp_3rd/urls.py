@@ -329,7 +329,6 @@ urlpatterns = [
 
         name="display_stars_in_solstice_dates"),
 
-
       path('delete-the-DaysInSearchEngine-using-ids/', delete_the_DaysInSearchEngine_using_ids,
 
         name="delete_the_DaysInSearchEngine_using_ids"),
@@ -343,6 +342,9 @@ urlpatterns = [
       path('determine-the-relative-position-of-stars/', determine_the_relative_position_of_stars,
 
         name="determine_the_relative_position_of_stars"), 
+    
+    
+    
 
       path("site-pages/", display_site_pages, name="display_site_pages"),
 
@@ -356,8 +358,6 @@ urlpatterns = [
 
       path("start-page/site-pages/astronomy/", display_astronomy_pages, name="display_astronomy_pages"),
 
-
-      
       path('start-page/aux-pages/create-days-17/', create_the_DaysInSearchEngine_17, name="create_the_DaysInSearchEngine_17"),
 
       path('start-page/aux-pages/create-days-712/', create_the_DaysInSearchEngine_712, name="create_the_DaysInSearchEngine_712"),
@@ -384,7 +384,6 @@ urlpatterns = [
 
       path('start-page/aux-pages/determine-stars-movement/', determine_stars_movement, name="determine_stars_movement"),
 
-      
       path('start-page/aux-pages/delete-objects-used-in-calculations/', delete_objs_used_in_calculations,
 
         name="delete_objs_used_in_calculations"),
@@ -435,15 +434,12 @@ urlpatterns = [
 
         name="determine_the_relative_position_of_stars"), 
 
-
-
       path('start-page/site-pages/astronomy/determine-the-aparent-magnitude/', determine_the_aparent_magnitude, 
       name="determine_the_aparent_magnitude"),
 
       path('start-page/site-pages/astronomy/determine-the-absolute-magnitude/', determine_the_absolute_magnitude,
 
         name="determine-the-absolute-magnitude"),
-
 
       path('start-page/site-pages/astronomy/determine-distance-from-Earth/', determine_distance_from_Earth,
         name="determine_distance_from_Earth"),
