@@ -776,7 +776,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				td =  timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7))
 
-				print("str")
+				print("line1")
 
 
 
@@ -792,8 +792,9 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				td = td + timedelta(days=2)
 
-				print("str0")
+				print("line2")
 
+				
 
 			elif (obj.second_date_with_total_lunar_eclipse.day ==
 
@@ -807,7 +808,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				td = td + timedelta(days=6)
 
-				print("str1a")
+				print("line3")
 
 
 
@@ -824,7 +825,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				td = timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7)) 
 
-				print("str1c")
+				print("line4")
 
 				
 
@@ -840,7 +841,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				td = timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7)) 
 
-				print("str1d")
+				print("line5")
 
 				
 
@@ -872,7 +873,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-				print("str1e")
+				print("line6")
 
 				
 
@@ -907,7 +908,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				print(td.days)
 
-				print("str1f")
+				print("line7")
 
 
 
@@ -939,7 +940,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-				print("str1g")
+				print("line8")
 
 
 
@@ -975,7 +976,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				print(td.days)
 
-				print("str1h")
+				print("line9")
 
 		
 
@@ -1001,7 +1002,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				td = timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7)) + timedelta(days=18)
 
-				print("strstrstr3")
+				print("line10")
 
 
 
@@ -1019,13 +1020,10 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 				and obj.second_date_with_total_lunar_eclipse.year-
 				obj.first_date_with_total_lunar_eclipse.year > 1):
 
-				td = timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7)) #+ timedelta(days=18)
+				td = timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7))
 
-				print("strstrstr4")
+				print("line11")
 
-
-
-			#years lt
 
 
 
@@ -1064,7 +1062,8 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-				print("str5")
+				print("line12")
+				
 
 
 			elif (obj.second_date_with_total_lunar_eclipse.day <
@@ -1107,7 +1106,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				print(td.days)
 
-				print("str6")
+				print("line13")
 
 
 
@@ -1147,12 +1146,10 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
+				print("line14")
 
 
-
-				print("str7")
-
-
+				
 
 			elif (obj.second_date_with_total_lunar_eclipse.day <
 
@@ -1194,11 +1191,8 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				print(td.days)
 
-				print("str8")
+				print("line15")
 
-
-
-			#years gt
 
 
 
@@ -1237,7 +1231,9 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-				print("str9")
+				print("line16")
+				
+				
 
 
 			elif (obj.second_date_with_total_lunar_eclipse.day <
@@ -1280,7 +1276,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				print(td.days)
 
-				print("str10")
+				print("line17")
 
 
 
@@ -1304,7 +1300,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
                 
 
 
-
 				if  (obj.first_date_with_total_lunar_eclipse.month -
 				obj.second_date_with_total_lunar_eclipse.month == 1):
 
@@ -1321,10 +1316,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-
-
-
-				print("str11")
+				print("line18")
 
 
 
@@ -1367,7 +1359,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				print(td.days)
 
-				print("str12")
+				print("line20")
 
 
 
