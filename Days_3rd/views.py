@@ -15,8 +15,6 @@ from django.utils import timezone
 
 import math
 
-# from franges import frange
-
 import geopy
 
 from geopy.geocoders import Nominatim
@@ -26,10 +24,9 @@ from geopy.geocoders import Nominatim
 # from datetime import timedelta, datetime, date  
 
 
-# from dateutil.relativedelta import relativedelta
 
 
-from.forms  import (DaysTillaDateForm, YearsWithAttributesEqualToaValueForm,
+from .forms  import (DaysTillaDateForm, YearsWithAttributesEqualToaValueForm,
 
 BisectYearsinaDecadeForm, BisectYearsinaCenturyForm,
 
@@ -165,14 +162,12 @@ def view_days_till_a_date(request):
 
 			form = DaysTillaDateForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = DaysTillaDateForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/days-till-a-date.html"
 
@@ -211,14 +206,12 @@ def view_days_till_a_date_display_attributes(request):
 
 			form = DaysTillaDateForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = DaysTillaDateForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/days-till-a-date-display-attributes.html"
 
@@ -279,7 +272,6 @@ def view_years_with_equal_sum_of_attributes_to_a_value(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/attributes-equal-to-a-value.html"
 
@@ -290,10 +282,8 @@ def view_years_with_equal_sum_of_attributes_to_a_value(request):
 
 
 
-
 def view_leap_years_in_a_decade(request):
 
-	# pass
 
 	if request.method == 'POST':
 
@@ -342,17 +332,12 @@ def view_leap_years_in_a_decade(request):
 				        	if (i.year % 400) == 0:
 				        		obj.bisect_years+=(str(i.year)+ ", ")
 				        		count += 1
-				                # print("{0} is a leap year".format(i.year))
-				              
-				            # else:
-				            #     print("{0} is not a leap year".format(i.year))
+				          
 				        else:
-				            # print("{0} is a leap year".format(i.year))
 				            obj.bisect_years+=(str(i.year)+ ", ")
 
 				            count += 1
-				    # else:
-				    #     print("{0} is not a leap year".format(i.year))
+				
 
 				obj.bisect_years_count = count
 
@@ -368,7 +353,6 @@ def view_leap_years_in_a_decade(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/bisect-years-in-a-decade.html"
 
@@ -381,7 +365,6 @@ def view_leap_years_in_a_decade(request):
 
 def view_leap_years_in_a_century(request):
 
-	# pass
 
 	if request.method == 'POST':
 
@@ -432,17 +415,12 @@ def view_leap_years_in_a_century(request):
 				        	if (i.year % 400) == 0:
 				        		obj.bisect_years_in_century+=(str(i.year)+ ", ")
 				        		count += 1
-				                # print("{0} is a leap year".format(i.year))
-				              
-				            # else:
-				            #     print("{0} is not a leap year".format(i.year))
+				         
 				        else:
-				            # print("{0} is a leap year".format(i.year))
 				            obj.bisect_years_in_century+=(str(i.year)+ ", ")
 
 				            count += 1
-				    # else:
-				    #     print("{0} is not a leap year".format(i.year))
+			
 
 				obj.bisect_years_count_in_century = count
 
@@ -458,7 +436,6 @@ def view_leap_years_in_a_century(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/bisect-years-in-a-century.html"
 
@@ -468,9 +445,7 @@ def view_leap_years_in_a_century(request):
 
 
 
-   	
-
-
+   
 
 def view_sum_of_attributes_of_nth_day_in_a_year(request):
 
@@ -497,13 +472,7 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 
 				dli = []
 
-				# d = date(obj.date_to_sum_attributes.year, obj.nth_month_value, obj.nth_day_value)
-
-				# dt = date(d*2)
-
-				# td = dt - d 
-
-				# obj.date_to_sum_attributes_days = dt.days
+	
 
 				for i in dly:
 
@@ -535,7 +504,6 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/sum-of-attributes-of-nth-day.html"
 
@@ -547,8 +515,6 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 
 def view_how_many_bisect_years_in_the_last_nth_centuries(request):
 
-
-	# pass
 
 	if request.method == 'POST':
 
@@ -599,17 +565,12 @@ def view_how_many_bisect_years_in_the_last_nth_centuries(request):
 				        	if (i.year % 400) == 0:
 				        		obj.bisect_years_in_centuries+=(str(i.year)+ ", ")
 				        		count += 1
-				                # print("{0} is a leap year".format(i.year))
-				              
-				            # else:
-				            #     print("{0} is not a leap year".format(i.year))
+				            
 				        else:
-				            # print("{0} is a leap year".format(i.year))
 				            obj.bisect_years_in_centuries+=(str(i.year)+ ", ")
 
 				            count += 1
-				    # else:
-				    #     print("{0} is not a leap year".format(i.year))
+				 
 
 				obj.bisect_years_count_in_centuries = count
 
@@ -625,7 +586,6 @@ def view_how_many_bisect_years_in_the_last_nth_centuries(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/bisect-years-in-centuries.html"
 
@@ -667,14 +627,12 @@ def how_many_months_and_days_till_the_next_spring_equinox(request):
 
 			form = MonthsandDaystillthenextSpringEquinoxForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = MonthsandDaystillthenextSpringEquinoxForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/days-till-the-next-spring-equinox.html"
 
@@ -715,14 +673,12 @@ def how_many_months_and_days_till_the_next_autumn_equinox(request):
 
 			form = MonthsandDaystillthenextAutumnEquinoxForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = MonthsandDaystillthenextAutumnEquinoxForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/days-till-the-next-autumn-equinox.html"
 
@@ -730,131 +686,6 @@ def how_many_months_and_days_till_the_next_autumn_equinox(request):
 
     
     
-
-
-
-
-# def what_period_between_years_with_total_lunar_eclipse(request):
-
-
-# 	if request.method == 'POST':
-
-# 		form = PeriodsbetweenDateswithTotalLunarEclipseForm(request.POST)
-
-
-# 		if form.is_valid():
-
-# 			form.save()
-
-# 			obj = Day.objects.last()
-
-# 			res = []
-
-# 			res_1 = []
-
-# 			res_2 = []
-
-
-# 			dt_le = [(obj.first_date_with_total_lunar_eclipse.year,
-# 				obj.first_date_with_total_lunar_eclipse.month,
-# 				obj.first_date_with_total_lunar_eclipse.day,)]
-
-# 			dt_le_1= [(obj.second_date_with_total_lunar_eclipse.year,
-# 				obj.second_date_with_total_lunar_eclipse.month,
-# 				obj.second_date_with_total_lunar_eclipse.day,)]
-
-
-# 			for i in range(1):
-
-
-# 				if (obj.second_date_with_total_lunar_eclipse.month == 1 and 
-# 					obj.second_date_with_total_lunar_eclipse.day == 1) :
-
-# 					res.append(0)
-# 					res_1.append(abs(12 - dt_le[i][1]))
-# 					res_2.append(abs(30 - dt_le[i][2])+7)
-
-# 				elif  (obj.first_date_with_total_lunar_eclipse.year !=  
-# 					obj.second_date_with_total_lunar_eclipse.year) :
-
-# 					res.append(0)
-# 					res_1.append(dt_le_1[i][1]+ abs(12 - dt_le[i][1])-1)
-# 					res_2.append(abs(30 - dt_le[i][2])+dt_le_1[i][2]+9)
-
-				
-# 				else:
-
-# 					res.append(dt_le_1[i][0]- dt_le[i][0])
-# 					res_1.append(abs(dt_le_1[i][1] - dt_le[i][1]))
-# 					res_2.append(abs(dt_le_1[i][2] - dt_le[i][2]))
-
-
-			
-
-# 			td = timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7))
-
-# 			if (obj.second_date_with_total_lunar_eclipse.day <
-
-# 			obj.first_date_with_total_lunar_eclipse.day  and  
-
-# 			obj.first_date_with_total_lunar_eclipse.year !=  
-# 				obj.second_date_with_total_lunar_eclipse.year):
-
-# 				td = timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7))
-
-
-# 			elif (obj.second_date_with_total_lunar_eclipse.day <
-
-# 				obj.first_date_with_total_lunar_eclipse.day
-# 				and  obj.first_date_with_total_lunar_eclipse.year == 
-# 				obj.second_date_with_total_lunar_eclipse.year) :
-
-# 				td = td - timedelta(days=abs(int(obj.first_date_with_total_lunar_eclipse.day)-
-# 					int(obj.second_date_with_total_lunar_eclipse.day)))
-
-
-
-# 			else:
-
-# 				td = td + timedelta(days=5)
-
-
-
-
-# 			print(str(obj.second_date_with_total_lunar_eclipse.month))
-# 			print(str(obj.second_date_with_total_lunar_eclipse.day))
-
-# 			print("days",td.days)
-# 			print(res)
-# 			print(res_1)
-# 			print(res_2)
-
-
-# 			obj.months_between_dates_with_total_lunar_eclipse = td.days//30
-# 			obj.minutes_between_dates_with_total_lunar_eclipse = td.days * 1440
-
-# 			obj.used_in_calculations_by_user = True
-
-# 			obj.save()
-
-# 			form = PeriodsbetweenDateswithTotalLunarEclipseForm()
-
-# 			# return render(request, "Days/days-till-a-date.html")
-# 	else:
-
-# 		form = PeriodsbetweenDateswithTotalLunarEclipseForm()
-
-# 	obj = Day.objects.last()
-	
-# 	# context_dictionary = {'form' : form,}
-
-# 	template_path = "Days/periods-between-dates-with-total-lunar-eclipse.html"
-
-# 	return render(request, template_path, {'form': form, "obj":obj, })
-
-
-
-
 
 
 
@@ -979,16 +810,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 				print("str1a")
 
 
-			# elif (obj.second_date_with_total_lunar_eclipse.day ==
-
-			# obj.first_date_with_total_lunar_eclipse.day  and  
-
-			# obj.first_date_with_total_lunar_eclipse.year ==  
-			# 	obj.second_date_with_total_lunar_eclipse.year):
-
-			# 	td = timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7)) 
-
-			# 	print("str1b")
 
 
 			elif (obj.second_date_with_total_lunar_eclipse.day >
@@ -1005,6 +826,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				print("str1c")
 
+				
 
 			elif (obj.second_date_with_total_lunar_eclipse.day <
 
@@ -1020,6 +842,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				print("str1d")
 
+				
 
 			elif (obj.second_date_with_total_lunar_eclipse.day >
 
@@ -1049,15 +872,9 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-
-				# td = (timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7)) )
-				# +timedelta(days=obj.second_date_with_total_lunar_eclipse.day-
-				# 		obj.first_date_with_total_lunar_eclipse.day )
-
-				# td = td + timedelta(days=6)
-
 				print("str1e")
 
+				
 
 			elif (obj.second_date_with_total_lunar_eclipse.day <
 
@@ -1104,17 +921,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 				and obj.first_date_with_total_lunar_eclipse.month >
 				obj.second_date_with_total_lunar_eclipse.month):
 
-				# td = (timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7))
-
-				# 	+ timedelta(days=1)-
-
-				# 	timedelta(days=obj.second_date_with_total_lunar_eclipse.day-
-				# 		obj.first_date_with_total_lunar_eclipse.day ))
-
-				# td = td + timedelta(days=6)
-                
-
-
 
 				if  (obj.first_date_with_total_lunar_eclipse.month -
 				obj.second_date_with_total_lunar_eclipse.month == 1):
@@ -1129,8 +935,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 					td = (timedelta(days=(abs(obj.first_date_with_total_lunar_eclipse.month - obj.second_date_with_total_lunar_eclipse.month ) * 30  - 
 
 						(obj.second_date_with_total_lunar_eclipse.day - obj.first_date_with_total_lunar_eclipse.day))))
-
-
 
 
 
@@ -1175,33 +979,9 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 		
 
-			# elif (obj.second_date_with_total_lunar_eclipse.day <
-
-			# obj.first_date_with_total_lunar_eclipse.day  and  
-
-			# obj.first_date_with_total_lunar_eclipse.year !=  
-			# 	obj.second_date_with_total_lunar_eclipse.year):
-
-			# 	td = timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7)) 
-
-			# 	print("str1")
-
-
-
-			# elif (obj.second_date_with_total_lunar_eclipse.day <
-
-			# 	obj.first_date_with_total_lunar_eclipse.day
-			# 	and  obj.first_date_with_total_lunar_eclipse.year == 
-			# 	obj.second_date_with_total_lunar_eclipse.year) :
-
-			# 	td = (td - timedelta(days=abs(int(obj.first_date_with_total_lunar_eclipse.day)-
-			# 		int(obj.second_date_with_total_lunar_eclipse.day)))+timedelta(days=2))
-
-			# 	print("strstr2")
-
 
 			#years
-            #######################################################################################################################
+            ########################################################################################################################################################
 
 
 
@@ -1284,13 +1064,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-
-				# td = (timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7)) )
-				# +timedelta(days=obj.second_date_with_total_lunar_eclipse.day-
-				# 		obj.first_date_with_total_lunar_eclipse.day )
-
-				# td = td + timedelta(days=6)
-
 				print("str5")
 
 
@@ -1355,16 +1128,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				and obj.first_date_with_total_lunar_eclipse.month >
 				obj.second_date_with_total_lunar_eclipse.month):
-
-				# td = (timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7))
-
-				# 	+ timedelta(days=1)-
-
-				# 	timedelta(days=obj.second_date_with_total_lunar_eclipse.day-
-				# 		obj.first_date_with_total_lunar_eclipse.day ))
-
-				# td = td + timedelta(days=6)
-                
 
 
 
@@ -1474,12 +1237,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-				# td = (timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7)) )
-				# +timedelta(days=obj.second_date_with_total_lunar_eclipse.day-
-				# 		obj.first_date_with_total_lunar_eclipse.day )
-
-				# td = td + timedelta(days=6)
-
 				print("str9")
 
 
@@ -1544,15 +1301,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 				and obj.first_date_with_total_lunar_eclipse.month >
 				obj.second_date_with_total_lunar_eclipse.month):
-
-				# td = (timedelta(days=res[0]*365 + res_2[0]+ (res_1[0]*4*7))
-
-				# 	+ timedelta(days=1)-
-
-				# 	timedelta(days=obj.second_date_with_total_lunar_eclipse.day-
-				# 		obj.first_date_with_total_lunar_eclipse.day ))
-
-				# td = td + timedelta(days=6)
                 
 
 
@@ -1625,18 +1373,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-			# else:
-
-			# 	td = abs(td + timedelta(days=30+(obj.first_date_with_total_lunar_eclipse.day-
-			# 			obj.second_date_with_total_lunar_eclipse.day)))
-
-			# 	# td = td + timedelta(days=2)
-
-			# 	print("strstrstrstr5")
-
-
-
-
 			print(str(obj.second_date_with_total_lunar_eclipse.month))
 			print(str(obj.second_date_with_total_lunar_eclipse.day))
 
@@ -1655,19 +1391,16 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 			form = PeriodsbetweenDateswithTotalLunarEclipseForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = PeriodsbetweenDateswithTotalLunarEclipseForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/periods-between-dates-with-total-lunar-eclipse.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
-
 
 
 
@@ -1729,7 +1462,6 @@ def find_the_equivalent_of_timezone_with_USA(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/find-the-equivalent-of-timezone-with-USA.html"
 
@@ -1797,14 +1529,12 @@ def find_the_difference_of_timezone_with_USA(request):
 
 			form = Find_the_difference_of_timezone_with_USA_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = Find_the_difference_of_timezone_with_USA_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/find-the-difference-of-timezone-with-USA.html"
 
@@ -1871,14 +1601,12 @@ def find_equivalent_with_timezone(request):
 
 			form =  Find_equivalent_with_timezone_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form =  Find_equivalent_with_timezone_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/find-equivalent-with-timezone.html"
 
@@ -1941,20 +1669,17 @@ def find_difference_with_timezone(request):
 
 			form =  Find_difference_with_timezone_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form =  Find_difference_with_timezone_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/find-difference-with-timezone.html"
 	return render(request, template_path, {'form': form, "obj":obj, })
 
     
-
 
 
 
@@ -2074,14 +1799,12 @@ def find_difference_of_timezone_from_UTC(request):
 
 			form = Find_difference_of_timezone_from_UTC_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = Find_difference_of_timezone_from_UTC_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/difference-of-timezone-from-UTC.html"
 
@@ -2172,7 +1895,7 @@ def find_difference_between_two_timezones(request):
 				elif int(latitude_longitude[1]) in range(165, 180):
 					obj.inTimeDelta_hours = 12
 				
-			#########################################################################	#####################################################################
+			##############################################################################################################################################
 			
 
 
@@ -2247,14 +1970,12 @@ def find_difference_between_two_timezones(request):
 
 			form = find_difference_between_two_timezones_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = find_difference_between_two_timezones_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/difference-between-two-timezones.html"
 
@@ -2487,8 +2208,6 @@ def display_date_for_the_next_n_days(request):
 
 				form = display_date_for_the_next_n_days_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
-
 	
 	else:
 
@@ -2496,7 +2215,6 @@ def display_date_for_the_next_n_days(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/date-for-the-next-n-days.html"
 
@@ -2539,15 +2257,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_decade(request):
 
 
 
-				# print(dl)
-
-				# print('\n')
-
-
-
-				# dt_obj = timezone.now()
-
-
 				for i in dl:
 
 				    dtl.append(i.replace(hour=obj.hour_sum_attributes, minute=obj.minute_sum_attributes,
@@ -2576,9 +2285,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_decade(request):
 
 				form = attributes_of_time_equal_to_date_in_a_decade_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
-
-
 
 	
 	else:
@@ -2587,8 +2293,7 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_decade(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
-
+	
 	template_path = "Days/attributes-of-time-equal-to-date.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
@@ -2630,15 +2335,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_century(request):
 
 
 
-				# print(dl)
-
-				# print('\n')
-
-
-
-				# dt_obj = timezone.now()
-
-
 				for i in dl:
 
 				    dtl.append(i.replace(hour=obj.hour_sum_attributes_in_a_century, minute=obj.minute_sum_attributes_in_a_century,
@@ -2667,7 +2363,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_century(request):
 
 				form = attributes_of_time_equal_to_date_in_a_century_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
 
 	else:
 
@@ -2675,7 +2370,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_century(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/attributes-of-time-equal-to-date-in-a-century.html"
 
@@ -2740,7 +2434,6 @@ def find_time_until_a_date_after_n_years(request):
 
 				form = find_time_until_a_date_after_n_years_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
 
 	else:
 
@@ -2748,7 +2441,6 @@ def find_time_until_a_date_after_n_years(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/time-until-a-date-after-n-years.html"
 
@@ -2801,7 +2493,6 @@ def calculate_date_and_time_until_next_solstice(request):
 
 			form = calculate_date_and_time_until_next_solstice_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 
 	else:
 
@@ -2809,7 +2500,6 @@ def calculate_date_and_time_until_next_solstice(request):
 
 	obj = Day.objects.last()
 
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/date-and-time-until-next-solstice.html"
 
@@ -2839,11 +2529,6 @@ def calculate_date_and_time_until_the_nth_day_in_the_next_n_years(request):
 
 				dt = datetime_function.now()
 
-				# datetime_function.now(tz=tzinfo_class.utc)
-
-				# obj.year_one_next_n_years = 2021
-
-				# obj.year_two_next_n_years = 2033
 
 
 				for i in range(obj.year_one_next_n_years+1, obj.year_two_next_n_years+1):
@@ -2857,11 +2542,6 @@ def calculate_date_and_time_until_the_nth_day_in_the_next_n_years(request):
 
 				for i in dli:
 				    dtl.append(i.replace(hour=dt.hour, minute=dt.minute, second=dt.second))
-
-
-				# print(dtl)
-
-				# print('\n')
 
 
 
@@ -2882,7 +2562,6 @@ def calculate_date_and_time_until_the_nth_day_in_the_next_n_years(request):
 
 				form = date_and_time_until_the_nth_day_in_the_next_n_years_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
 
 		else:
 
@@ -2890,7 +2569,6 @@ def calculate_date_and_time_until_the_nth_day_in_the_next_n_years(request):
 
 		obj = Day.objects.last()
 
-		# context_dictionary = {'form' : form,}
 
 		template_path = "Days/date-and-time-until-the-nth-day-in-the-next-n-years.html"
 
@@ -2987,7 +2665,6 @@ def find_which_years_of_nth_century_have_more_than_n_days_with_attrs(request):
 
 	obj = Day.objects.last()
 
-		# context_dictionary = {'form' : form,}
 
 	template_path = "Days/years-of-nth-century-have-more-than-n-days-with-attrs.html"
 
@@ -3113,7 +2790,6 @@ def how_many_solstices_in_n_years_with_sum_attrs_even_number(request):
 
 	obj = Day.objects.last()
 
-		# context_dictionary = {'form' : form,}
 
 	template_path = "Days/solstices-in-n-years-with-sum-attrs-even-number.html"
 
@@ -3238,7 +2914,6 @@ def how_many_solstices_in_n_years_with_sum_attrs_odd_number(request):
 
 	obj = Day.objects.last()
 
-		# context_dictionary = {'form' : form,}
 
 	template_path = "Days/solstices-in-n-years-with-sum-attrs-odd-number.html"
 
@@ -3267,41 +2942,6 @@ def view_calendar(request):
 
 
 			print("date",obj.date_one_calendar.year)
-
-			# if obj.date_two_calendar.year == obj.date_one_calendar.year:
-
-			#     for m in range(obj.date_one_calendar.month, obj.date_two_calendar.month+1):
-
-
-			#         if m==4 or m==6 or m==9 or m==11:
-			#             for j in range(1, 31):
-			#                 dtl.append(date(obj.date_one_calendar.year, m, j))
-			#         elif m==1 or m==3 or m==5 or m==7 or m==8 or m==10 or m==12:
-			#             for j in range(1, 32):
-			#                 dtl.append(date(obj.date_one_calendar.year, m, j))
-			#         else:
-			#             for j in range(1, 29):
-			#                 dtl.append(date(obj.date_one_calendar.year, m, j))
-
-
-			       
-
-			# else:
-
-			# 	for i in range(int(obj.date_one_calendar.year), int(obj.date_two_calendar.year)+1):  #2101  2201
-			# 	    for m in range(1, 13):
-			# 	    # for m in range(obj.date_one_calendar.month, obj.date_two_calendar.month+1):
-			# 	        if m==4 or m==6 or m==9 or m==11:
-			# 	            for j in range(1, 31):
-			# 	                dtl.append(date(i, m, j))
-			# 	        elif m==1 or m==3 or m==5 or m==7 or m==8 or m==10 or m==12:
-			# 	            for j in range(1, 32):
-			# 	                dtl.append(date(i, m, j))
-			# 	        else:
-			# 	            for j in range(1, 29):
-			# 	                dtl.append(date(i, m, j))
-
-
 
 
 
@@ -3418,7 +3058,6 @@ def view_calendar(request):
 					if i != obj.date_two_calendar.year:
 
 					    for m in range(1, 13):
-					    # for m in range(obj.date_one_calendar.month, obj.date_two_calendar.month+1):
 					        if m==4 or m==6 or m==9 or m==11:
 					            for j in range(1, 31):
 					                dtl.append(date(i, m, j))
@@ -3485,7 +3124,6 @@ def view_calendar(request):
 
 			form = view_calendar_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 
 	
 	else:
@@ -3494,7 +3132,6 @@ def view_calendar(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/calendar.html"
 
@@ -3549,8 +3186,7 @@ def  create_the_DaysInSearchEngine_17(request):
 
 			        form = create_Days_Form()
 
-
-	
+				
 	else:
 
 		form =create_Days_Form()
@@ -3564,7 +3200,8 @@ def  create_the_DaysInSearchEngine_17(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
+
 
 
 
@@ -3614,7 +3251,6 @@ def  create_the_DaysInSearchEngine_712(request):
 
 			        form = create_Days_712_Form()
 
-
 	
 	else:
 
@@ -3628,7 +3264,7 @@ def  create_the_DaysInSearchEngine_712(request):
 
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 		
@@ -3677,7 +3313,7 @@ def  delete_the_DaysInSearchEngine(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 			
 
@@ -3697,19 +3333,10 @@ def determine_visibility_of_stars(request):
 			form.save()
 
 
-			# obj = DaysInSearchEngine.objects.last()
-
-			# qs = DaysInSearchEngine.objects.all()
-
-			# obj = Stars.objects.last()
-
 			qs1 = Stars.objects.all()
 
 			for i in qs1:
 
-
-				# if (i.year_one_period == obj.year_one_period or
-				# i.year_two_period == obj.year_two_period):  #2101  2201
 
 			    i.aparent_magnitude = i.absolute_magnitude - (5 + 5*math.log10(1/i.distance_from_Earth))
 
@@ -3733,61 +3360,7 @@ def determine_visibility_of_stars(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
-
-
-
-
-
-
-# def ref_magnitudes(request):
-
-
-# 	if request.method == 'POST':
-
-# 		form = ref_magnitudes_Form(request.POST)
-
-# 		if form.is_valid():
-
-# 			form.save()
-
-# 			obj = DaysInSearchEngine.objects.first()
-
-# 			qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+93)
-
-# 			qs1 = Stars.objects.all()
-
-# 			for item in qs1:
-
-# 				if item.aparent_magnitude < 6.5:
-
-# 					print(item.name)
-
-# 					for i in qs:
-
-# 						i.stars += item.name + ", "
-			
-# 						i.save()
-
-
-# 			form = ref_magnitudes_Form()
-
-	
-# 	else:
-
-# 		form = ref_magnitudes_Form()
-
-# 	if request.user.is_authenticated and request.user.is_staff:
-
-# 		template_path = "Days/ref-magnitudes.html"
-
-# 	else: 
-
-# 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
-
-	
-# 	return render(request, template_path, {'form': form})# "obj":obj, })
-
+	return render(request, template_path, {'form': form})
 
 
 
@@ -3849,7 +3422,7 @@ def ref_magnitudes(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -3870,9 +3443,6 @@ def determine_most_visible_periods(request):
 
 			print("strstr")
 
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+5)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -3892,7 +3462,6 @@ def determine_most_visible_periods(request):
 
 			for item in qs1:
 
-				# print("str")
 
 				print(item.ascension+item.declination)
 
@@ -4016,6 +3585,7 @@ def determine_most_visible_periods(request):
 			
 						i.save()
 
+				
 
 				elif (item.ascension+item.declination  >= -46.83  and  
 
@@ -4029,6 +3599,7 @@ def determine_most_visible_periods(request):
 			
 						i.save()
 
+				
 
 				elif (item.ascension+item.declination  >= -9.94  and  
 
@@ -4056,6 +3627,7 @@ def determine_most_visible_periods(request):
 			
 						i.save()
 
+				
 
 				elif (item.ascension+item.declination  >= 20.49 and 
 
@@ -4168,6 +3740,7 @@ def determine_most_visible_periods(request):
 						i.most_visible_periods += item.name + " : " + "february-july" + ", "
 			
 						i.save()
+				
 
 
 				elif (item.ascension+item.declination >=-9.2 and 
@@ -4301,7 +3874,7 @@ def determine_most_visible_periods(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -4317,10 +3890,6 @@ def set_season(request):
 		if form.is_valid():
 
 			form.save()
-
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+93)
 
 			
 			obj = DaysInSearchEngine.objects.last()
@@ -4378,7 +3947,7 @@ def set_season(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -4398,9 +3967,6 @@ def determine_most_visible_periods_seasons(request):
 
 			print("strstr")
 
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+5)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -4421,7 +3987,6 @@ def determine_most_visible_periods_seasons(request):
 
 			for item in qs1:
 
-				# print("str")
 
 				print(item.ascension+item.declination)
 
@@ -4490,7 +4055,6 @@ def determine_most_visible_periods_seasons(request):
 						i.most_visible_periods_seasons += item.name + ", "
 			
 						i.save()
-
 
 
 
@@ -4570,7 +4134,6 @@ def determine_most_visible_periods_seasons(request):
 						i.most_visible_periods_seasons += item.name + ", "
 			
 						i.save()
-
 
 
 
@@ -4793,7 +4356,6 @@ def determine_most_visible_periods_seasons(request):
 
 
 
-
 				elif (item.ascension+item.declination >= 51.52 and
 
 				item.ascension+item.declination <= 51.53):
@@ -4919,7 +4481,7 @@ def determine_most_visible_periods_seasons(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -4937,9 +4499,6 @@ def set_spring_equinox(request):
 
 			form.save()
 
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+93)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -4996,7 +4555,7 @@ def set_spring_equinox(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -5014,9 +4573,6 @@ def set_autumn_equinox(request):
 
 			form.save()
 
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id+183, id__lte=obj.id+366)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -5073,7 +4629,7 @@ def set_autumn_equinox(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -5090,10 +4646,6 @@ def set_summer_solstice(request):
 		if form.is_valid():
 
 			form.save()
-
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+275)
 
 			
 			obj = DaysInSearchEngine.objects.last()
@@ -5150,7 +4702,7 @@ def set_summer_solstice(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -5168,9 +4720,6 @@ def set_winter_solstice(request):
 
 			form.save()
 
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id+275, id__lte=obj.id+366)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -5225,7 +4774,7 @@ def set_winter_solstice(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -5296,7 +4845,7 @@ def determine_stars_movement(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -5394,6 +4943,7 @@ def determine_the_absolute_magnitude(request):
 	print(obj.absolute_magnitude_calculation)
 	
 	return render(request, template_path, {'form': form, "obj" : obj,})
+
 
 
 
@@ -5684,11 +5234,6 @@ def determine_visibility_of_a_star_in_seasons(request):
 
 			qs1 = Stars.objects.all()
 
-			# for item in qs1 :
-
-			# 	item.seasons_visibility = " "
-
-			# 	item.save()
 
 			obj.seasons_visibility = " "
 
@@ -5705,9 +5250,6 @@ def determine_visibility_of_a_star_in_seasons(request):
 
 					obj.declination = item.declination
 
-
-
-				# print("str")
 
 					print(item.ascension+item.declination)
 
@@ -5794,8 +5336,6 @@ def determine_visibility_of_a_star_in_seasons(request):
 						obj.save()
 
 						break
-
-
 
 
 
@@ -6107,8 +5647,6 @@ def determine_visibility_of_a_star_in_seasons(request):
 
 
 
-
-
 					elif (round(obj.ascension+obj.declination, 2) >= 51.52 and
 
 					round(obj.ascension+obj.declination, 2) <= 51.53):
@@ -6206,7 +5744,6 @@ def determine_visibility_of_a_star_in_seasons(request):
 
 
 
-
 			form = Determine_the_visibility_of_a_star_in_seasons_Form()
 
 	
@@ -6275,9 +5812,6 @@ def find_which_stars_are_visible_in_equinox_dates(request):
 
 			form.save()
 
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+93)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -6311,7 +5845,6 @@ def find_which_stars_are_visible_in_equinox_dates(request):
 
 					for i in qs_stars:
 
-						# i.stars_in_equinox_dates += "Spring equinox: "
 
 						i.stars_in_equinox_dates+=item.most_visible_periods_seasons 
 
@@ -6323,7 +5856,6 @@ def find_which_stars_are_visible_in_equinox_dates(request):
 
 					for i in qs_stars:
 
-						# i.stars_in_equinox_dates += "Spring equinox: "
 
 						i.stars_in_equinox_dates+=item.most_visible_periods_seasons 
 
@@ -6349,9 +5881,7 @@ def find_which_stars_are_visible_in_equinox_dates(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
-
-
+	return render(request, template_path, {'form': form})
 
 
 
@@ -6368,9 +5898,6 @@ def find_which_stars_are_visible_in_autumn_equinox_dates(request):
 
 			form.save()
 
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+93)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -6404,10 +5931,7 @@ def find_which_stars_are_visible_in_autumn_equinox_dates(request):
 
 					for i in qs_stars:
 
-						# i.stars_in_equinox_dates += "Autumn equinox: "
-
 						i.stars_in_autumn_equinox_dates+=item.most_visible_periods_seasons 
-
 
 						print("str")
 
@@ -6416,8 +5940,6 @@ def find_which_stars_are_visible_in_autumn_equinox_dates(request):
 				if (date_var1  == 366  and item.date_field.month == 9 and item.date_field.day == 23):
 
 					for i in qs_stars:
-
-						# i.stars_in_equinox_dates += "Autumn equinox: "
 
 						i.stars_in_autumn_equinox_dates+=item.most_visible_periods_seasons  
 
@@ -6444,7 +5966,7 @@ def find_which_stars_are_visible_in_autumn_equinox_dates(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -6461,10 +5983,6 @@ def find_which_stars_are_visible_in_summer_solstice_dates(request):
 		if form.is_valid():
 
 			form.save()
-
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+93)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -6498,10 +6016,7 @@ def find_which_stars_are_visible_in_summer_solstice_dates(request):
 
 					for i in qs_stars:
 
-						# i.stars_in_equinox_dates += "Autumn equinox: "
-
 						i.stars_in_solstice_dates+=item.most_visible_periods_seasons 
-
 
 						print("str")
 
@@ -6510,8 +6025,6 @@ def find_which_stars_are_visible_in_summer_solstice_dates(request):
 				if (date_var1  == 366  and item.date_field.month == 6 and item.date_field.day == 21):
 
 					for i in qs_stars:
-
-						# i.stars_in_equinox_dates += "Autumn equinox: "
 
 						i.stars_in_solstice_dates+=item.most_visible_periods_seasons  
 
@@ -6538,7 +6051,8 @@ def find_which_stars_are_visible_in_summer_solstice_dates(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
+
 
 
 
@@ -6553,10 +6067,6 @@ def find_which_stars_are_visible_in_winter_solstice_dates(request):
 		if form.is_valid():
 
 			form.save()
-
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+93)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -6590,8 +6100,6 @@ def find_which_stars_are_visible_in_winter_solstice_dates(request):
 
 					for i in qs_stars:
 
-						# i.stars_in_equinox_dates += "Autumn equinox: "
-
 						i.stars_in_winter_solstice_dates+=item.most_visible_periods_seasons 
 
 
@@ -6602,8 +6110,6 @@ def find_which_stars_are_visible_in_winter_solstice_dates(request):
 				if (date_var1  == 366  and item.date_field.month == 12 and item.date_field.day == 22):
 
 					for i in qs_stars:
-
-						# i.stars_in_equinox_dates += "Autumn equinox: "
 
 						i.stars_in_winter_solstice_dates+=item.most_visible_periods_seasons  
 
@@ -6630,7 +6136,7 @@ def find_which_stars_are_visible_in_winter_solstice_dates(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -6696,7 +6202,7 @@ def display_stars_most_visible_in_equinox_dates(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -6762,7 +6268,8 @@ def display_stars_most_visible_in_solstice_dates(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
+
 
 
 
@@ -6834,7 +6341,8 @@ def  delete_the_DaysInSearchEngine_using_ids(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
+
 
 
 
@@ -6850,10 +6358,6 @@ def set_total_lunar_eclipses(request):
 		if form.is_valid():
 
 			form.save()
-
-			# obj = DaysInSearchEngine.objects.first()
-
-			# qs = DaysInSearchEngine.objects.filter(id__gte=obj.id, id__lte=obj.id+93)
 
 			obj = DaysInSearchEngine.objects.last()
 
@@ -6901,7 +6405,7 @@ def set_total_lunar_eclipses(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -7210,7 +6714,7 @@ def determine_the_relative_position_of_stars(request):
 		template_path = "Days/you-are-not-authorized-to-view-this-page.html"
 
 	
-	return render(request, template_path, {'form': form})# "obj":obj, })
+	return render(request, template_path, {'form': form})
 
 
 
@@ -7238,13 +6742,6 @@ def display_astronomy_pages(request):
 	template_path = "Days/astronomy.html"
 
 	return render(request, template_path)
-
-
-
-
-
-
-
 
 
 
