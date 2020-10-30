@@ -13,7 +13,6 @@ from django.db.models import Q
 
 
 
-
 class Name(models.Model):
 
 
@@ -236,9 +235,7 @@ class Day(models.Model):
 	second_sum_attributes = models.IntegerField(default=0)
 
 
-
 	dates_sum_attributes_result = models.TextField(default=0)
-
 
 
 
