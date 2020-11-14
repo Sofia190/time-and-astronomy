@@ -192,6 +192,8 @@ def view_days_till_a_date_display_attributes(request):
 			obj = Day.objects.last()
 
 			obj.days_till_a_date_result = (obj.second_date-obj.first_date).days
+			obj.minutes_till_a_date_result = (obj.second_date-obj.first_date).days * 1440
+			obj.seconds_till_a_date_result = (obj.second_date-obj.first_date).days * 1440 * 60
 
 			obj.one_date_res = datetime.datetime(obj.first_date.year, obj.first_date.month,
 				obj.first_date.day, timezone.now().hour, timezone.now().minute, timezone.now().second)
