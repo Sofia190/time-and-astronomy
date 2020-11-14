@@ -41,8 +41,7 @@ class NameModel(models.Model):
 class DaysInSearchEngineQuerySet(models.query.QuerySet):
 
 	def search(self, query):
-		lookup = (
-				 Q(date_field__icontains=query) )
+		lookup = ( Q(date_field__icontains=query) )
 
 
 		return self.filter(lookup)
