@@ -118,7 +118,8 @@ class Day(models.Model):
 
 
 	days_till_a_date_result = models.IntegerField(default=0)
-
+	minutes_till_a_date_result = models.IntegerField(default=0)
+	seconds_till_a_date_result = models.IntegerField(default=0)
 
 
 	date_for_years_with_attributes_equal_to_a_value = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
